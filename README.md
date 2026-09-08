@@ -2,10 +2,7 @@
 <h4>A Flask weather site generated with Claude.</h4>
 
 Demonstrating access to temperatures and<br>
-radar data.<br>
-<br>
-The site was generated in order to demonstrate creation of Flask sites with 
-<br>Anthropic Claude.<br>
+radar data, using Claude code.<br>
 <br>
 Steps:
 <ul>
