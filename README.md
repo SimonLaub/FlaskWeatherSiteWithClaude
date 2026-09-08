@@ -14,4 +14,5 @@ for access to temperatures and radar data.</li>
 </ul>
 <img src="Dmi.gif" alt="Dmi Denmark overvivew"><br>
 <br>
-<img src="Claude.jpg" alt="Claude overvivew">
+Claude usage:<br>
+<img src="Claude.jpg" alt="Claude overvivew" style="width: 100px; height: auto;">
