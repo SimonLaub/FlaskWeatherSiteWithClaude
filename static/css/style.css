@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+header {
+  padding: 1.5rem;
+  background: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+main {
+  padding: 2rem;
+}
+
+footer {
+  padding: 1rem;
+  background: #ffffff;
+  border-top: 1px solid #ddd;
+  color: #777;
+  font-size: 0.85rem;
+}
+
+.denmark-map {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.update-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.4rem;
+  background: #c8102e;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.update-button:hover {
+  background: #a30d25;
+}
+
+#map {
+  height: 500px;
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  border: 1px solid #ddd;
+}
+
+.weather-table {
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.weather-table th,
+.weather-table td {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+}
+
+.weather-table th {
+  background: #ffffff;
+}
+
+.radar-image {
+  max-width: 100%;
+  border: 1px solid #ddd;
+  margin-bottom: 1.5rem;
+}
+
+.warning-list {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: 0 auto 1.5rem auto;
+  text-align: left;
+}
+
+.warning-item {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-left: 4px solid #c8102e;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.warning-severity {
+  color: #a30d25;
+  font-weight: bold;
+}
+
+.warning-note {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.explainer {
+  max-width: 600px;
+  margin: 0 auto 1rem auto;
+  color: #333;
+  line-height: 1.5;
+}
+
+.legend-light,
+.legend-heavy,
+.legend-extreme {
+  font-weight: bold;
+  padding: 0 0.2rem;
+  border-radius: 3px;
+}
+
+.legend-light {
+  background: #b2e6e6;
+}
+
+.legend-heavy {
+  background: #7ea6ff;
+  color: #ffffff;
+}
+
+.legend-extreme {
+  background: #f5a623;
+}
+
+.timestamp {
+  font-size: 0.85rem;
+  color: #555;
+  font-style: italic;
+  margin: -0.5rem 0 1.5rem 0;
+}
