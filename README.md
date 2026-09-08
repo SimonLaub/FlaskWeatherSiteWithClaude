@@ -12,8 +12,8 @@ Steps:
 for access to temperatures and radar data.</li>
 <li>Create the full Flask website.</li>
 </ul>
-<img src="Dmi.gif" alt="Dmi Denmark overvivew"><br>
+<img src="Dmi.gif" alt="Dmi Denmark overview"><br>
 <br>
 Claude usage:<br>
-<img src="Claude.jpg" alt="Claude overvivew" style="width: 200px; height: auto;"><br>
+<img src="Claude.jpg" alt="Claude overview" style="width: 200px; height: auto;"><br>
 Original Flask <a href="https://github.com/SimonLaub/FlaskProject">website</a>.
