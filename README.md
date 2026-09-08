@@ -1,7 +1,7 @@
 # Flask weather site 
 <h4>A Flask weather site generated with Claude.</h4>
 
-Demonstrating access to temperatures and<br>
+Demonstrating access to temperature and<br>
 radar data, using Claude code.<br>
 <br>
 Steps:
