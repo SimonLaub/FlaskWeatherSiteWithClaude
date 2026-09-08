@@ -7,10 +7,10 @@ radar data, using Claude code.<br>
 Steps:
 <ul>
 <li>Ask <i>Claude</i> for help setting up a Flask website.</li>
-<li>Including <i>Static</i> and <i>Template</i> folder (with relevant content).</li>
+<li>Including <i>Static</i> and <i>Template</i> folders (with relevant content).</li>
 <li>Then ask <i>Claude</i> for Python code<br>
-for access to temperatures and radar data.</li>
-<li>Create the full Flask website.</li>
+for access to temperature and radar data.</li>
+<li>Finally: Create the full Flask website.</li>
 </ul>
 <img src="Dmi.gif" alt="Dmi Denmark overview"><br>
 <br>
