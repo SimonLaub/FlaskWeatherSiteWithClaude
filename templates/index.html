@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <title>MeteoSite</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Vejret over Danmark</h1>
+  </header>
+  <main>
+    <img src="{{ url_for('static', filename='img/denmark.svg') }}" alt="Kort over Danmark" class="denmark-map">
+    <a href="{{ url_for('weather') }}" class="update-button">Update weather</a>
+    <a href="{{ url_for('radar') }}" class="update-button">Radar &amp; varsler</a>
+  </main>
+  <footer>
+    <p>Eaaa Good Weather Service &copy; 2026</p>
+  </footer>
+</body>
+</html>

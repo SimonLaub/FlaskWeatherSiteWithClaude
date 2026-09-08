@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <title>MeteoSite - Radar & varsler</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Radar &amp; varsler</h1>
+  </header>
+  <main>
+    <h2>Nedbørsradar</h2>
+    <p class="explainer">
+      Billedet viser nedbør (regn/byger), som den måles af DMI's vejrradarer lige nu.
+      Farverne angiver nedbørsintensitet: <span class="legend-light">lyseblå/turkis</span> er let nedbør,
+      <span class="legend-heavy">mørkeblå</span> er kraftigere regn, og <span class="legend-extreme">gul/orange</span>
+      er kraftige byger. Billedet opdateres ca. hvert 5. minut. Kilde: DMI.
+    </p>
+    <img src="{{ radar_image_url }}" alt="Radarbillede over Danmark" class="radar-image">
+    <p class="timestamp">
+      {% if radar_timestamp %}Radarbillede fra: {{ radar_timestamp }}{% else %}Tidspunkt for radarbillede kunne ikke bestemmes{% endif %}
+    </p>
+
+    <h2>Aktive varsler for Danmark</h2>
+    <p class="explainer">
+      Officielle vejrvarsler for Danmark (storm, skybrud, glatføre m.m.), som udstedt af DMI og
+      videreformidlet via den europæiske varslingstjeneste MeteoAlarm.
+    </p>
+    <p class="timestamp">Varsler tjekket: {{ checked_at }}</p>
+    {% if warnings is none %}
+      <p class="warning-note">Kunne ikke hente varsler lige nu. Prøv igen senere.</p>
+    {% elif warnings|length == 0 %}
+      <p class="warning-note">Ingen aktive varsler for Danmark.</p>
+    {% else %}
+      <ul class="warning-list">
+        {% for w in warnings %}
+        <li class="warning-item">
+          <strong>{{ w.event or w.title }}</strong>
+          {% if w.area %}<span> — {{ w.area }}</span>{% endif %}
+          {% if w.severity %}<span class="warning-severity"> ({{ w.severity }})</span>{% endif %}
+          <p>{{ w.summary }}</p>
+          {% if w.effective or w.expires %}
+          <p class="warning-note">
+            {% if w.effective %}Gælder fra: {{ w.effective }}{% endif %}
+            {% if w.expires %} — til: {{ w.expires }}{% endif %}
+          </p>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <a href="{{ url_for('index') }}" class="update-button">Tilbage</a>
+  </main>
+  <footer>
+    <p>Eaaa Good Weather Service &copy; 2026</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <title>MeteoSite - Weather</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Weather update</h1>
+  </header>
+  <main>
+    <div id="map"></div>
+    <table class="weather-table">
+      <thead>
+        <tr>
+          <th>By</th>
+          <th>Temperatur</th>
+          <th>Målt</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for reading in readings %}
+        <tr>
+          <td>{{ reading.name }}</td>
+          <td>{% if reading.temp is not none %}{{ reading.temp }} °C{% else %}Ikke tilgængelig{% endif %}</td>
+          <td>{{ reading.observed or "-" }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="{{ url_for('weather') }}" class="update-button">Update weather</a>
+    <a href="{{ url_for('index') }}" class="update-button">Tilbage</a>
+  </main>
+  <footer>
+    <p>Eaaa Good Weather Service &copy; 2026</p>
+  </footer>
+  <script>
+    const readings = {{ readings | tojson }};
+
+    const map = L.map('map');
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    const markers = [];
+    readings.forEach(function (reading) {
+      if (reading.lat === null || reading.lon === null) {
+        return;
+      }
+      const label = reading.temp !== null ? reading.temp + ' °C' : 'N/A';
+      markers.push(
+        L.marker([reading.lat, reading.lon])
+          .addTo(map)
+          .bindTooltip(reading.name + ': ' + label, { permanent: true, direction: 'top' })
+      );
+    });
+
+    if (markers.length > 0) {
+      map.fitBounds(L.featureGroup(markers).getBounds(), { padding: [40, 40] });
+    } else {
+      map.setView([56.0, 10.5], 7);
+    }
+  </script>
+</body>
+</html>
