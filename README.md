@@ -16,4 +16,4 @@ for access to temperature and radar data.</li>
 <br>
 Claude usage:<br>
 <img src="Claude.jpg" alt="Claude overview" style="width: 200px; height: auto;"><br>
-Original Flask <a href="https://github.com/SimonLaub/FlaskProject">website</a>.
+Original (2018) Flask <a href="https://github.com/SimonLaub/FlaskProject">website</a>.
