@@ -1,8 +1,8 @@
 # Flask weather site 
 <h4>A Flask weather site generated with Claude.</h4>
 
-A Flask weather website with access to temperatures<br>
-weather radar.<br>
+A Flask weather website with access to temperatures and<br>
+radar.<br>
 <br>
 The site was generated in order to demonstrate creation of Flask sites with 
 <br>Anthropic Claude.<br>
