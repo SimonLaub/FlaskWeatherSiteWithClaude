@@ -12,3 +12,4 @@ Steps:
 for access to temperatures and radar data.</li>
 <li>Create the full Flask website.</li>
 </ul>
+<img src="Dmi.gif" alt="Dmi Denmark overvivew">
